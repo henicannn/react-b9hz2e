@@ -25,12 +25,16 @@ export default function App() {
   );
 
   const clearAll = () => {
-    setButtonActive(
-      buttonActive.map((f) => {
-        f.active = true;
-        return f;
-      })
-    );
+    if (showModal) {
+      alert('please select filters and click apply')
+    } else {
+      setButtonActive(
+        buttonActive.map((f) => {
+          f.active = true;
+          return f;
+        })
+      );
+    }
   };
 
   
