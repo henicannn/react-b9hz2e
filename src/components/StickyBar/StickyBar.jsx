@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
-import './StickyBar.scss';
+import React, { useEffect } from "react";
+import "./StickyBar.scss";
 
 const defaultProps = {};
 
-const StickyBar = ({ setShowModal, clearAll, filteredGenres, setButtonActive,buttonActive  }) => {
+const StickyBar = ({
+  setShowModal,
+  clearAll,
+  filteredGenres,
+  setButtonActive,
+  buttonActive,
+}) => {
   const onClick = () => {
     setShowModal((prev) => !prev);
     setButtonActive(
@@ -22,7 +28,7 @@ const StickyBar = ({ setShowModal, clearAll, filteredGenres, setButtonActive,but
       <button onClick={clearAll} className="StickyBar-clearButton">
         X CLEAR ALL
       </button>
-      <div className="StickyBar-activeGenreWrapper"> 
+      <div className="StickyBar-activeGenreWrapper">
         {filteredGenres.map((f) => (
           <div className="StickyBar-activeGenreWrapper-activeGenre">{f}</div>
         ))}

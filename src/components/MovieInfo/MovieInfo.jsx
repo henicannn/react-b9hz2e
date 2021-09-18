@@ -11,13 +11,15 @@ const MovieInfo = (props) => {
   // An example
   const posterURL = getMoviePosterURL(posterPath);
 
+  var dateObj = new Date(year);
+  var movieYear = dateObj.getUTCFullYear();
 
 return (
     <div className="MovieInfo">
       <div className="MovieInfo__details">
         <img src={posterURL} />
         <div className="MovieInfo__details-info">
-          <div className="MovieInfo__details-info-year">{year}</div>
+          <div className="MovieInfo__details-info-year">{movieYear}</div>
           <div className="MovieInfo__details-info-title">{title}</div>
           <div className="MovieInfo__details-info-overview">{overview}</div>
         </div>
