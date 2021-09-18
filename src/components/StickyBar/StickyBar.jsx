@@ -3,9 +3,15 @@ import './StickyBar.scss';
 
 const defaultProps = {};
 
-const StickyBar = ({ setShowModal, clearAll, filteredGenres }) => {
+const StickyBar = ({ setShowModal, clearAll, filteredGenres, setButtonActive,buttonActive  }) => {
   const onClick = () => {
     setShowModal((prev) => !prev);
+    setButtonActive(
+      buttonActive.map((f) => {
+        f.active = false;
+        return f;
+      })
+    );
   };
 
   return (

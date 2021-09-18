@@ -1,4 +1,4 @@
-@import '../../styles/shared.scss';
+@import "../../styles/shared.scss";
 
 .GenreModal {
   position: fixed;
@@ -11,7 +11,34 @@
   height: 540px;
   &-wrapper {
     margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 20px;
   }
+
+  &-genresWrapper{
+    margin-top: 20px;
+  }
+
+  &-genres {
+    display: none;
+  }
+
+  &-genresButton{
+    background-color: $darkPurple;
+    color: $white;
+    border: 2px solid $white;
+    box-sizing: border-box;
+    border-radius: 11px;
+    padding: 10px;
+  }
+
+  &-genres:checked + label {
+    background-color: $pink;
+    border: 2px solid $pink;
+  }
+  
+  
   &-apply {
     width: 80%;
     height: 43px;
@@ -27,25 +54,5 @@
     background-color: $darkPink;
     transition: 0.2s;
     cursor: pointer;
-  }
-  &-genres {
-    background-color: $darkPurple;
-    border: 2px solid $white;
-    box-sizing: border-box;
-    border-radius: 11px;
-    color: $white;
-    width: 120px;
-    height: 50px;
-    margin: 5px;
-  }
-  &-genres:hover {
-    background-color: $pink;
-    border: 2px solid $pink;
-    transition: 0.2s;
-    cursor: pointer;
-  }
-  .active {
-    background-color: $pink;
-    border: 2px solid $pink;
   }
 }

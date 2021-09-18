@@ -27,11 +27,21 @@ export default function App() {
   const clearAll = () => {
     setButtonActive(
       buttonActive.map((f) => {
-        f.active = false;
+        f.active = true;
         return f;
       })
     );
   };
+
+  
+  useEffect(() => {
+    setButtonActive(
+      buttonActive.map((f) => {
+        f.active = true;
+        return f;
+      })
+    );
+  }, []);
 
   const activeFilterIds = [];
   buttonActive.map((f) => {
@@ -46,7 +56,7 @@ export default function App() {
 
   const filteredMovies = movies.filter((m) => {
     return activeFilterIds.some((tagId) => {
-      return m.genre_ids.includes(tagId);
+        return m.genre_ids.includes(tagId);
     });
   });
 
@@ -63,6 +73,8 @@ export default function App() {
         setShowModal={setShowModal}
         clearAll={clearAll}
         filteredGenres={filteredGenres}
+        setButtonActive={setButtonActive}
+        buttonActive={buttonActive}
       />
       {filteredMovies.map((filteredMovies, index) => (
         <div key={index}>

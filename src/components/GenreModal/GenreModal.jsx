@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import movieGenres from '../../data/movie-genres.json';;
-import './GenreModal.scss';
+import "./GenreModal.scss";
 
 const defaultProps = {};
 
@@ -23,21 +23,22 @@ const GenreModal = ({
       })
     );
   };
-
   return (
     <>
       {showModal ? (
         <div className="GenreModal">
           <div className="GenreModal-wrapper">
             {movieGenres.map((items, index) => (
-              <button
-                key={index}
-                test={items.active}
-                className={liClasses}
-                onClick={() => toggleFilter(items.id)}
-              >
-                {items.name}
-              </button>
+              <div key={index} className="GenreModal-genresWrapper" >
+                <input
+                  type="checkbox"
+                  name={items.name}
+                  value={items.name}
+                  className="GenreModal-genres"
+                  id={items.name}
+                />
+                <label className="GenreModal-genresButton" for={items.name} onClick={() => toggleFilter(items.id)}>{items.name}</label>
+              </div>
             ))}
           </div>
           <button onClick={onApply} className="GenreModal-apply">
