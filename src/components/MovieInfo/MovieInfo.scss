@@ -1,0 +1,39 @@
+@import '../../styles/shared.scss';
+
+.MovieInfo {
+  position: relative;
+  img {
+    width: 312px;
+  }
+  &__details {
+    display: flex;
+    padding: 300px 200px 70px 100px;
+    flex-direction: row;
+    text-align: left;
+    &-info {
+      padding-left: 60px;
+      font-family: 'Roboto';
+      font-style: normal;
+      color: $white;
+      width: 312px;
+      &-year {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 129.19%;
+        padding-bottom: 20px;
+      }
+      &-title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        padding-bottom: 20px;
+      }
+      &-overview {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

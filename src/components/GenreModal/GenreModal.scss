@@ -1,0 +1,51 @@
+@import '../../styles/shared.scss';
+
+.GenreModal {
+  position: fixed;
+  top: 300px;
+  margin: 0 auto;
+  z-index: 10;
+  background-color: $darkPurple;
+  border-radius: 10px;
+  width: 430px;
+  height: 540px;
+  &-wrapper {
+    margin-top: 10px;
+  }
+  &-apply {
+    width: 80%;
+    height: 43px;
+    background-color: $pink;
+    border: none;
+    color: $white;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 45px;
+  }
+  &-apply:hover {
+    background-color: $darkPink;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  &-genres {
+    background-color: $darkPurple;
+    border: 2px solid $white;
+    box-sizing: border-box;
+    border-radius: 11px;
+    color: $white;
+    width: 120px;
+    height: 50px;
+    margin: 5px;
+  }
+  &-genres:hover {
+    background-color: $pink;
+    border: 2px solid $pink;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .active {
+    background-color: $pink;
+    border: 2px solid $pink;
+  }
+}
